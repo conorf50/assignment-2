@@ -2,10 +2,16 @@ package cfarrell;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
 
-public class Serializer {
-	public static void loadFromFile() throws FileNotFoundException {
+import edu.princeton.cs.introcs.In;
+
+public class Read{
+
+	public Read() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void loadUserData() throws Exception {
 		File usersFile = new File("data_movieLens/users5.dat");
         In inUsers = new In(usersFile);
           //each field is separated(delimited) by a '|'
@@ -31,5 +37,14 @@ public class Serializer {
         }
 		
 }
-}
 
+	private String readLine() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+}
