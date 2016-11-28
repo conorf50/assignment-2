@@ -27,7 +27,7 @@ public class LMovieAPI
 		return movie;
 	}
 
-	public void	removeUser(int userID) {
+	public void	removeUser(Long id) {
 	}
 
 
