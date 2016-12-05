@@ -1,6 +1,7 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import com.google.common.base.Objects;
@@ -18,6 +19,7 @@ public class User
 	public String occupation;
 
 	public List<Rating> ratings = new ArrayList<>();
+	public HashMap<Long, User> users = new HashMap<Long, User>();
 
 	public User(String firstName, String lastName, String gender, String age, String occupation)
 	{

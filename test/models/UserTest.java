@@ -2,15 +2,17 @@ package models;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import org.junit.Test;
 
-import static models.User.counter;;
+import models.User;
 
 public class UserTest
 {
-  User homer = new User ("homer", "simpson", "male",  "40", procrastinator);
+User homer = new User ("homer", "simpson", "male",  "40", "procrastinator");
 
   @Test
   public void testCreate()
@@ -26,24 +28,26 @@ public class UserTest
   public void testIds()
   {
     Set<Long> ids = new HashSet<>();
+	public List<User> users = new ArrayList<>();
+
     for (User user : users)
     {
       ids.add(user.id);
     }
-    assertEquals (users.length, ids.size());
+    assertEquals (User.equals(true), ids.size());
   }
 
   @Test
   public void testToString()
   {
-    assertEquals ("User{" + homer.id + ", homer, simpson, secret, homer@simpson.com}", homer.toString());
+    assertEquals ("User{" + homer.id + ", homer, simpson, male, 40, procrastinator}", homer.toString());
   }
   
   @Test
   public void testEquals()
   {
-    User homer2 = new User ("homer", "simpson", "homer@simpson.com",  "secret"); 
-    User bart   = new User ("bart", "simpson", "bartr@simpson.com",  "secret"); 
+    User homer2 = new User ("homer", "simpson", "45",  "male", "timewaster"); 
+    User bart   = new User ("bart", "simpson", "12",  "male", "joker"); 
 
     assertEquals(homer, homer);
     assertEquals(homer, homer2);
