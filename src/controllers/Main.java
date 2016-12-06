@@ -4,6 +4,7 @@ import asg.cliche.Command;
 import asg.cliche.Param;
 import asg.cliche.Shell;
 import asg.cliche.ShellFactory;
+import utils.Importer;
 
 public class Main
 {
@@ -29,8 +30,10 @@ public class Main
 	{
 		Main main = new Main();
 		Shell shell = ShellFactory.createConsoleShell("lm", "Welcome to likemovie - ?help for instructions", main);
+		Importer importer = new Importer();
 		shell.commandLoop();
 		main.likeMovies.store();
+		
 	}
 }
 

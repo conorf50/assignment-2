@@ -11,10 +11,8 @@ public class Importer {
 		while (!inUsers.isEmpty()) {
 			// get user and rating from data source
 			String userDetails = inUsers.readLine();
-
 			// parse user details string
 			String[] userTokens = userDetails.split(delims);
-
 			// output user data to console.
 			if (userTokens.length == 7) {
 				System.out.println("UserID: "+userTokens[0]+",First Name:"+

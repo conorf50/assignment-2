@@ -17,7 +17,7 @@ public class User
 	public String gender;
 	public String age;
 	public String occupation;
-
+	
 	public List<Rating> ratings = new ArrayList<>();
 	public HashMap<Long, User> users = new HashMap<Long, User>();
 
