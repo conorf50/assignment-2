@@ -19,7 +19,7 @@ public class User
 	public String occupation;
 	
 	public List<Rating> ratings = new ArrayList<>();
-	public HashMap<Long, User> users = new HashMap<Long, User>();
+	public static HashMap<Long, User> users = new HashMap<Long, User>();
 
 	public User(String firstName, String lastName, String gender, String age, String occupation)
 	{
@@ -29,6 +29,78 @@ public class User
 		this.gender = gender;
 		this.age = age;
 		this.occupation = occupation;
+	}
+
+	public static Long getCounter() {
+		return counter;
+	}
+
+	public static void setCounter(Long counter) {
+		User.counter = counter;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getAge() {
+		return age;
+	}
+
+	public void setAge(String age) {
+		this.age = age;
+	}
+
+	public String getOccupation() {
+		return occupation;
+	}
+
+	public void setOccupation(String occupation) {
+		this.occupation = occupation;
+	}
+
+	public List<Rating> getRatings() {
+		return ratings;
+	}
+
+	public void setRatings(List<Rating> ratings) {
+		this.ratings = ratings;
+	}
+
+	public static HashMap<Long, User> getUsers() {
+		return users;
+	}
+
+	public static void setUsers(HashMap<Long, User> users) {
+		User.users = users;
 	}
 
 	public String toString()

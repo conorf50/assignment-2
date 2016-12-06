@@ -1,5 +1,7 @@
 package models;
 
+import java.util.HashMap;
+
 import com.google.common.base.Objects;
 
 import utils.ToJsonString;
@@ -7,12 +9,13 @@ import utils.ToJsonString;
 public class Movie
 {
 	static Long counter = 0l;
-
 	public Long id;
-
 	public String title;
 	public String year;
 	public String url;
+	
+	public static HashMap<Long, Movie> movies = new HashMap<Long, Movie>();
+
 	public Movie(String title, String year, String url)
 	{
 		this.id = counter++;
@@ -47,5 +50,10 @@ public class Movie
 		{
 			return false;
 		}
+	}
+
+	public Long getId() {
+		return this.id;
+	
 	}
 }

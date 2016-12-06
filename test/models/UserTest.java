@@ -24,18 +24,18 @@ User homer = new User ("homer", "simpson", "male",  "40", "procrastinator");
     assertEquals ("procrastinator", 	 homer.occupation);   
   }
 
-//  @Test
-//  public void testIds()
-//  {
-//    Set<Long> ids = new HashSet<>();
-//	public List<User> users = new ArrayList<>();
-//
-//    for (User user : users)
-//    {
-//      ids.add(user.id);
-//    }
-//    assertEquals (User.equals(true), ids.size());
-//  }
+  @Test
+  public void testIds()
+  {
+    Set<Long> ids = new HashSet<>();
+	List<User> users = new ArrayList<>();
+
+    for (User user : users)
+    {
+      ids.add(user.id);
+    }
+    assertEquals (User.equals(true), ids.size());
+  }
 
   @Test
   public void testToString()

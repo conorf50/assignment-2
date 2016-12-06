@@ -30,7 +30,10 @@ public class Main
 	{
 		Main main = new Main();
 		Shell shell = ShellFactory.createConsoleShell("lm", "Welcome to likemovie - ?help for instructions", main);
-		Importer importer = new Importer();
+		//Importer importer = new Importer();
+		Importer.userImporter();
+		
+		
 		shell.commandLoop();
 		main.likeMovies.store();
 		
