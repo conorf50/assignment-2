@@ -15,9 +15,9 @@ public class Rating {
 	public Long itemId;
 	public Long rating;
 	public Long timestamp;
-	public List<Rating> ratings = new ArrayList<>();
+	public static List<Rating> ratings = new ArrayList<>();
 
-	public Rating(Long counter, Long userId, Long rating, Long itemId, Long timestamp)
+	public Rating(Long userId, Long rating, Long itemId, Long timestamp)
 	{
 		this.counter = counter++;
 		this.userId = userId;
@@ -29,11 +29,10 @@ public class Rating {
 	
 
 
-
-
 	public static Long getCounter() {
 		return counter;
 	}
+
 
 
 
@@ -43,9 +42,11 @@ public class Rating {
 
 
 
+
 	public Long getUserId() {
 		return userId;
 	}
+
 
 
 
@@ -55,9 +56,11 @@ public class Rating {
 
 
 
+
 	public Long getItemId() {
 		return itemId;
 	}
+
 
 
 
@@ -67,9 +70,11 @@ public class Rating {
 
 
 
+
 	public Long getRating() {
 		return rating;
 	}
+
 
 
 
@@ -79,9 +84,11 @@ public class Rating {
 
 
 
+
 	public Long getTimestamp() {
 		return timestamp;
 	}
+
 
 
 
@@ -91,15 +98,18 @@ public class Rating {
 
 
 
+
 	public List<Rating> getRatings() {
 		return ratings;
 	}
 
 
 
+
 	public void setRatings(List<Rating> ratings) {
 		this.ratings = ratings;
 	}
+
 
 
 

@@ -21,7 +21,7 @@ public class User
 	public List<Rating> ratings = new ArrayList<>();
 	public static HashMap<Long, User> users = new HashMap<Long, User>();
 
-	public User(String firstName, String lastName, String gender, String age, String occupation)
+	public User(Long id, String firstName, String lastName, String gender, String age, String occupation)
 	{
 		this.id = counter++;
 		this.firstName = firstName;
@@ -103,7 +103,7 @@ public class User
 		User.users = users;
 	}
 
-	public String toString()
+	public String toJSONString()
 	{
 		return new ToJsonString(getClass(), this).toString();
 	}

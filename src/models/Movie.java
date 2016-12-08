@@ -6,8 +6,13 @@ import com.google.common.base.Objects;
 
 import utils.ToJsonString;
 
-public class Movie
+public class Movie implements Comparable <Movie>
 {
+	@Override
+	public int compareTo(Movie o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	static Long counter = 0l;
 	public Long id;
 	public String title;
@@ -56,4 +61,6 @@ public class Movie
 		return this.id;
 	
 	}
+
+
 }

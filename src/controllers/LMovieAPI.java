@@ -11,15 +11,23 @@ public class LMovieAPI
 	public Map<Long, User> userIndex = new HashMap<>();
 	public Map<Long, Movie> movieIndex = new HashMap<>();
 
-	public  LMovieAPI()
-	{}
+	public LMovieAPI() {
+	}
+	
 
-	public User addUser(String firstName, String lastName, String age, String gender, String occupation)
+	public User addUser(Long id, String firstName, String lastName, String age, String gender, String occupation)
 	{
-		User user = new User (firstName, lastName, age, gender, occupation);
+		User user = new User (id,firstName, lastName, age, gender, occupation);
 		userIndex.put(user.id, user);
 		return user;
 	}
+	
+	
+	public Map<Long, User> listUsers()
+	{
+		return User.getUsers();
+	}
+	
 	public Movie addMovie(String title, String year, String url)
 	{
 		Movie movie = new Movie (title, year, url);

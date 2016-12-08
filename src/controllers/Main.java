@@ -5,17 +5,42 @@ import asg.cliche.Param;
 import asg.cliche.Shell;
 import asg.cliche.ShellFactory;
 import utils.Importer;
+import controllers.LMovieAPI;
+import models.User;
 
 public class Main
 {
-	public LMovieAPI likeMovies;
+	public static void main(String[] args) throws Exception
+	{
+		Importer.userImporter();
+		Importer.movieImporter();
+		Importer.ratingImporter();
+		Main main = new Main();
+		Shell shell = ShellFactory.createConsoleShell("lm", "Welcome to likemovie - ?help for instructions", main);
+		shell.commandLoop();
+		main.likeMovies.store();
+
+		
+	}
+	
+	public LMovieAPI likeMovies = new LMovieAPI();
 	@Command(description="Add a new User")
-	public void addUser (@Param(name="first name") String firstName, @Param(name="last name") String lastName,
+	public void addUser (@Param(name="first name") Long id,@Param(name="first name") String firstName, @Param(name="last name") String lastName,
 			@Param(name="age") String age, @Param(name="gender") String gender, @Param(name="occupation") String occupation)
 	{
-		likeMovies.addUser(firstName, lastName, age, gender, occupation);
+		likeMovies.addUser(id, firstName, lastName, age, gender, occupation);
 	}
-
+	
+	@Command(description="List the users")
+	public void listUsers ()
+	{ 
+		for (User u : likeMovies.listUsers().values()) {
+			System.out.println(u.toJSONString());
+		}
+		//System.out.println(likeMovies.listUsers());
+;
+	}
+	
 	@Command(description="Delete a User")
 	public void removeUser (@Param(name="id") Long id)
 	{
@@ -26,18 +51,7 @@ public class Main
 	{
 		likeMovies.addMovie(title, year, url);
 	}
-	public static void main(String[] args) throws Exception
-	{
-		Main main = new Main();
-		Shell shell = ShellFactory.createConsoleShell("lm", "Welcome to likemovie - ?help for instructions", main);
-		//Importer importer = new Importer();
-		Importer.userImporter();
-		
-		
-		shell.commandLoop();
-		main.likeMovies.store();
-		
-	}
+	
 }
 
 
