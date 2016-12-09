@@ -19,7 +19,7 @@ public class UserTest
 	public String gender;
 	public String age;
 	public String occupation;
-   User homer = new User (4509l, "homer", "simpson", "male",  "40", "procrastinator");
+    User homer = new User (4509l, "homer", "simpson", "male",  "40", "procrastinator");
 
   @Test
   public void testCreate()

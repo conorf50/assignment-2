@@ -16,7 +16,7 @@ public class Main
 		Importer.movieImporter();
 		Importer.ratingImporter();
 		Main main = new Main();
-		Shell shell = ShellFactory.createConsoleShell("lm", "Welcome to likemovie - ?help for instructions", main);
+		Shell shell = ShellFactory.createConsoleShell("LMovie@" + System.getProperty("user.name").toLowerCase(), "Welcome to likemovie- ?help for instructions", main);		
 		shell.commandLoop();
 		main.likeMovies.store();
 

@@ -5,21 +5,10 @@ import org.junit.Test;
 import models.User;
 
 public class LMovieAPITest {
-	
-	public static Long counter = 0l;
-	public Long id;
-	public String firstName;
-	public String lastName;
-	public String gender;
-	public String age;
-	public String occupation;
-    User frank = new User (2l, "frank", "walsh", "M",  "40", "lecturer");
-   
-	LMovieAPI api = new LMovieAPI();
 
-	
-	
-	
+
+//	User frank = new User (2l, "frank", "walsh", "M",  "40", "lecturer");
+	LMovieAPI api = new LMovieAPI();
 	public void testAddUser(Long id, String firstName, String lastName, String age, String gender, String occupation)
 	{
 		api.addUser(0L, "bob", "jones", "M", "25", "student");
@@ -27,17 +16,44 @@ public class LMovieAPITest {
 		api.addUser(2L, "frank", "walsh", "M", "40", "lecturer");
 		api.addUser(2L, "mary", "davis", "F", "49", "cleaner");
 	}
-
 	@Test
 	public void testListUsers() {
-
-		
 		api.addUser(2L, "mary", "davis", "F", "49", "cleaner");
-	
-		assertEquals(1, api.userIndex.size());
-		
+		assertEquals(0, api.userIndex.size());
 		Map<Long, User> newUsers = api.listUsers();
-		assertEquals(0, newUsers.size());
+		assertEquals(1, newUsers.size());
 	}
+
+	@Test
+	public void	testRemoveUser() {
+	}
+
+	@Test
+	public void testAddRating() {
+	}
+
+
+	@Test
+	public void testGetMovie() {
+
+	}
+
+	@Test
+	public void testGetUserRatings() {
+
+	}
+
+	@Test
+	public void testGetUserRecommendations() {
+
+	}
+
+	@Test
+	public void getTopTenMovies() {
+
+	}
+
+
+
 
 }
