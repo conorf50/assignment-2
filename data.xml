@@ -9,7 +9,7 @@
           <long>7</long>
           <map/>
           <map/>
-          <long>7</long>
+          <long>9</long>
           <map reference="../map"/>
           <map reference="../map[2]"/>
           <null/>

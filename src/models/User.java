@@ -37,6 +37,9 @@ public class User
 		users.put(user.id, user);
 		return user;
 	}
+	public static void removeUser(Long id) {
+		    users.remove(id);
+	}
 	
 	public static Long getCounter() {
 		return counter;
@@ -139,4 +142,6 @@ public class User
 			return false;
 		}
 	}
+
+	
 }

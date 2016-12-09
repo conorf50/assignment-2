@@ -38,6 +38,7 @@ public class LMovieAPI
 	}
 
 	public void	removeUser(Long id) {
+		User.removeUser(id);
 	}
 
 

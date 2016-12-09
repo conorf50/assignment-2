@@ -19,17 +19,17 @@ public class UserTest
 	public String gender;
 	public String age;
 	public String occupation;
-    User homer = new User (4509l, "homer", "simpson", "male",  "40", "procrastinator");
+    User homer = new User (4509l, "homer", "simpson", "40",  "male", "procrastinator");
 
   @Test
   public void testCreate()
   {
-	equals(homer.id !=null);
-    assertEquals ("homer",               homer.firstName);
-    assertEquals ("simpson",             homer.lastName);
-    assertEquals ("male",  				 homer.gender);   
-    assertEquals ("40",                  homer.age);
-    assertEquals ("procrastinator", 	 homer.occupation);   
+	assertNotEquals(homer.id, null);
+    assertEquals ("homer",               homer.getFirstName());
+    assertEquals ("simpson",             homer.getLastName());
+    assertEquals ("male",  				 homer.getGender());   
+    assertEquals ("40",                  homer.getAge());
+    assertEquals ("procrastinator", 	 homer.getOccupation());   
   }
 
   @Test
@@ -48,7 +48,12 @@ public class UserTest
   @Test
   public void testNames(){
 	  User john = new User (4509l, "john", "smith", "45",  "M", "painter"); 
-	  equals (john.firstName = "john");
+	  assertEquals (john.firstName,"john");
+	  assertEquals (john.lastName,"smith");
+	  assertEquals (john.age, "45");
+	  assertEquals (john.occupation,"painter");
+	  assertEquals (john.gender,"M");
+	  
   }
   
   @Test
