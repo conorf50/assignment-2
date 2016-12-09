@@ -12,7 +12,7 @@
 //
 //public class UserTest
 //{
-////User homer = new User ("homer", "simpson", "male",  "40", "procrastinator");
+//User homer = new User ("45099", "homer", "simpson", "male",  "40", "procrastinator");
 //
 //  @Test
 //  public void testCreate()

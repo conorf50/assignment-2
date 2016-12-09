@@ -24,6 +24,7 @@ public class Main
 	}
 	
 	public LMovieAPI likeMovies = new LMovieAPI();
+	
 	@Command(description="Add a new User")
 	public void addUser (@Param(name="first name") Long id,@Param(name="first name") String firstName, @Param(name="last name") String lastName,
 			@Param(name="age") String age, @Param(name="gender") String gender, @Param(name="occupation") String occupation)

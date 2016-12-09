@@ -18,7 +18,7 @@ public class Importer {
 			// parse user details string
 			String[] userTokens = userDetails.split(delims);
 			if (userTokens.length == 7) {
-				System.out.println("Users Imported");
+				//System.out.println("Users Imported");
 	
 				User u = new User(Long.parseLong(userTokens[0]) , userTokens[1], (userTokens[2]),userTokens[3], userTokens[4], userTokens[5] );
 				//System.out.println(u.getId());
@@ -56,7 +56,7 @@ public class Importer {
 //			
 				Movie m = new Movie(userTokens[1], userTokens[2], (userTokens[3]) );
 				Movie.movies.put(m.getId(), m);
-				System.out.println("Movies Imported");
+				//System.out.println("Movies Imported");
 				;
 
 			}else
@@ -84,12 +84,12 @@ public class Importer {
 
 			// output user data to console.
 			if (userTokens.length == 4) {
-				System.out.println("UserID: "+userTokens[0]+",First Name:"+
-						userTokens[1]+",Surname:" + userTokens[2]+",Age:");
+//				System.out.println("UserID: "+userTokens[0]+",First Name:"+
+//						userTokens[1]+",Surname:" + userTokens[2]+",Age:");
 						Rating r = new Rating(new Long(Long.parseLong((userTokens[0]))), new Long(Long.parseLong((userTokens[1]))),new Long(Long.parseLong((userTokens[2]))),
 								new Long(Long.parseLong(userTokens[3])));
 				Rating.ratings.add(r);
-				System.out.println("Ratings Imported");
+			//	System.out.println("Ratings Imported");
 				;
 
 			}else
