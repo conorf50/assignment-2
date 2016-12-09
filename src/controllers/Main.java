@@ -26,7 +26,7 @@ public class Main
 	public LMovieAPI likeMovies = new LMovieAPI();
 	
 	@Command(description="Add a new User")
-	public void addUser (@Param(name="first name") Long id,@Param(name="first name") String firstName, @Param(name="last name") String lastName,
+	public void addUser (@Param(name="user ID") Long id,@Param(name="first name") String firstName, @Param(name="last name") String lastName,
 			@Param(name="age") String age, @Param(name="gender") String gender, @Param(name="occupation") String occupation)
 	{
 		likeMovies.addUser(id, firstName, lastName, age, gender, occupation);
@@ -47,6 +47,30 @@ public class Main
 	{
 		likeMovies.removeUser(id);
 	}
+
+	@Command(description="Load XML File")
+	public void load ()
+	{
+		try {
+			likeMovies.load();
+		} catch (Exception e) {
+			System.out.println("File load error");
+			e.printStackTrace();
+		}
+	}
+	
+
+	@Command(description="Store data in file")
+	public void store ()
+	{
+		try {
+			likeMovies.store();
+		} catch (Exception e) {
+			System.out.print("File write error");
+			e.printStackTrace();
+		}
+	}
+	
 	@Command(description="Add a Movie")
 	public void addMovie (@Param(name="title") String title, @Param(name="year") String year, @Param(name="url") String url)
 	{
