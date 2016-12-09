@@ -4,14 +4,14 @@
     <vector>
       <default>
         <capacityIncrement>0</capacityIncrement>
-        <elementCount>2</elementCount>
+        <elementCount>6</elementCount>
         <elementData>
+          <long>7</long>
           <map/>
           <map/>
-          <null/>
-          <null/>
-          <null/>
-          <null/>
+          <long>7</long>
+          <map reference="../map"/>
+          <map reference="../map[2]"/>
           <null/>
           <null/>
           <null/>

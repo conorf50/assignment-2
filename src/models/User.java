@@ -31,6 +31,13 @@ public class User
 		this.occupation = occupation;
 	}
 
+	public static User addUser(Long id, String firstName, String lastName, String age, String gender, String occupation)
+	{
+		User user = new User (id,firstName, lastName, age, gender, occupation);
+		users.put(user.id, user);
+		return user;
+	}
+	
 	public static Long getCounter() {
 		return counter;
 	}

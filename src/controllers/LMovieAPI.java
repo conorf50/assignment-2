@@ -15,21 +15,21 @@ public class LMovieAPI
 	public static XMLSerializer serializer  = new XMLSerializer(new File("data.xml"));
 	public LMovieAPI() {
 	}
-	
+
 
 	public User addUser(Long id, String firstName, String lastName, String age, String gender, String occupation)
 	{
 		User user = new User (id,firstName, lastName, age, gender, occupation);
-		userIndex.put(user.id, user);
+		User.addUser(user.id, user.firstName, user.lastName, user.age, user.gender,user.occupation);
 		return user;
 	}
-	
-	
+
+
 	public Map<Long, User> listUsers()
 	{
 		return User.getUsers();
 	}
-	
+
 	public Movie addMovie(String title, String year, String url)
 	{
 		Movie movie = new Movie (title, year, url);
@@ -59,22 +59,23 @@ public class LMovieAPI
 	public String getTopTenMovies() {
 		return null;
 	}
+	@SuppressWarnings("unchecked")
 	public void load() throws Exception
-	 {
-	 serializer.read();
-	 userIndex = (Map<Long, User>) serializer.pop();
-	 movieIndex = (Map<Long, Movie>) serializer.pop();
-	 User.counter = (Long) serializer.pop();
-	 }
-	 public void store() throws Exception
-	 {
-	 serializer.push(User.counter);
-	 serializer.push(movieIndex);
-	 serializer.push(userIndex);
+	{
+		serializer.read();
+		userIndex = (Map<Long, User>) serializer.pop();
+		movieIndex = (Map<Long, Movie>) serializer.pop();
+		User.counter = (Long) serializer.pop();
+	}
+	public void store() throws Exception
+	{
+		serializer.push(User.counter);
+		serializer.push(movieIndex);
+		serializer.push(userIndex);
 
-	 serializer.write();
-	 }
-	
+		serializer.write();
+	}
 
-	
+
+
 }

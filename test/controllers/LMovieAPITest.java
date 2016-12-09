@@ -1,14 +1,43 @@
 package controllers;
-
 import static org.junit.Assert.*;
-
+import java.util.Map;
 import org.junit.Test;
+import models.User;
 
 public class LMovieAPITest {
+	
+	public static Long counter = 0l;
+	public Long id;
+	public String firstName;
+	public String lastName;
+	public String gender;
+	public String age;
+	public String occupation;
+    User frank = new User (2l, "frank", "walsh", "M",  "40", "lecturer");
+   
+	LMovieAPI api = new LMovieAPI();
+
+	
+	
+	
+	public void testAddUser(Long id, String firstName, String lastName, String age, String gender, String occupation)
+	{
+		api.addUser(0L, "bob", "jones", "M", "25", "student");
+		api.addUser(1L, "joe", "walsh", "M", "19", "student");
+		api.addUser(2L, "frank", "walsh", "M", "40", "lecturer");
+		api.addUser(2L, "mary", "davis", "F", "49", "cleaner");
+	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testListUsers() {
+
+		
+		api.addUser(2L, "mary", "davis", "F", "49", "cleaner");
+	
+		assertEquals(1, api.userIndex.size());
+		
+		Map<Long, User> newUsers = api.listUsers();
+		assertEquals(0, newUsers.size());
 	}
 
 }
