@@ -1,9 +1,9 @@
 package controllers;
 
 import java.io.File;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-
 import models.Movie;
 import models.User;
 import utils.XMLSerializer;
@@ -16,31 +16,24 @@ public class LMovieAPI
 	public LMovieAPI() {
 	}
 
-
 	public User addUser(Long id, String firstName, String lastName, String age, String gender, String occupation)
 	{
 		User user = new User (id,firstName, lastName, age, gender, occupation);
 		User.addUser(user.id, user.firstName, user.lastName, user.age, user.gender,user.occupation);
 		return user;
 	}
-
-
-	public Map<Long, User> listUsers()
-	{
-		return User.getUsers();
+	
+	public void	removeUser(Long id) {
+		User.removeUser(id);
 	}
 
 	public Movie addMovie(String title, String year, String url)
 	{
 		Movie movie = new Movie (title, year, url);
-		movieIndex.put(movie.id, movie);
+		Movie.addMovie(title, year,url);
 		return movie;
 	}
-
-	public void	removeUser(Long id) {
-		User.removeUser(id);
-	}
-
+	
 
 	public void addRating(int userID, int movieID, int rating) {
 	}
@@ -58,6 +51,7 @@ public class LMovieAPI
 	}
 
 	public String getTopTenMovies() {
+		//Collections.sort();
 		return null;
 	}
 	@SuppressWarnings("unchecked")
@@ -68,7 +62,7 @@ public class LMovieAPI
 		movieIndex = (Map<Long, Movie>) serializer.pop();
 		User.counter = (Long) serializer.pop();
 	}
-	public void store() throws Exception
+	public void write() throws Exception
 	{
 		serializer.push(User.counter);
 		serializer.push(movieIndex);
@@ -76,6 +70,31 @@ public class LMovieAPI
 
 		serializer.write();
 	}
+	
+	
+	public Map<Long, User> listUsers()
+	{
+		return User.getUsers();
+	}
+	
+	public Map<Long, Movie> listMovies() {
+		return Movie.listMovies();
+		
+	}
+
+	
+	public void removeMovie(Long id) {
+		Movie.removeMovie(id);
+		
+	}
+	
+	
+
+
+
+
+
+	
 
 
 

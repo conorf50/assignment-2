@@ -41,6 +41,7 @@ public class Importer {
 
 
 	public static void movieImporter() {
+		System.out.println("Importing movies...");
 		File usersFile = new File("input/items5.dat");
 		In inUsers = new In(usersFile);
 		//each field is separated(delimited) by a '|'
@@ -56,7 +57,7 @@ public class Importer {
 //			
 				Movie m = new Movie(userTokens[1], userTokens[2], (userTokens[3]) );
 				Movie.movies.put(m.getId(), m);
-				//System.out.println("Movies Imported");
+			//System.out.println(m.getId());
 				;
 
 			}else

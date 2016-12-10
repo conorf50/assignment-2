@@ -29,8 +29,23 @@ public class Movie implements Comparable <Movie>
 		this.url = url;
 	}
 
-	@Override
-	public String toString()
+	public static Movie addMovie(String title, String year, String url) {
+		Movie mov = new Movie(title,year, url);
+		movies.put(mov.id, mov);
+		return mov;
+	}
+	
+	public static HashMap<Long, Movie> listMovies() {
+		return movies;
+		
+	}
+	
+	public static void removeMovie(Long id) {
+		movies.remove(id);
+		
+	}
+	
+	public String toJSONString()
 	{
 		return new ToJsonString(getClass(), this).toString();
 	}
@@ -61,6 +76,13 @@ public class Movie implements Comparable <Movie>
 		return this.id;
 	
 	}
+
+	
+
+
+
+
+	
 
 
 }

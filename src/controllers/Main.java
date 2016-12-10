@@ -6,6 +6,7 @@ import asg.cliche.Shell;
 import asg.cliche.ShellFactory;
 import utils.Importer;
 import controllers.LMovieAPI;
+import models.Movie;
 import models.User;
 
 public class Main
@@ -18,9 +19,7 @@ public class Main
 		Main main = new Main();
 		Shell shell = ShellFactory.createConsoleShell("LMovie@" + System.getProperty("user.name").toLowerCase(), "Welcome to likemovie- ?help for instructions", main);		
 		shell.commandLoop();
-		main.likeMovies.store();
-
-		
+		main.likeMovies.store();	
 	}
 	
 	public LMovieAPI likeMovies = new LMovieAPI();
@@ -77,6 +76,20 @@ public class Main
 		likeMovies.addMovie(title, year, url);
 	}
 	
+	@Command(description="List Movies")
+	public void listMovies ()
+	{
+		for (Movie m : likeMovies.listMovies().values()) {
+			System.out.println(m.toJSONString());
+		}
+//		likeMovies.listMovies();
+	}
+	
+	@Command(description="Delete a Movie")
+	public void deleteMovie (@Param(name="id") Long id)
+	{
+		likeMovies.removeMovie(id);
+	}
 }
 
 
