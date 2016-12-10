@@ -8,12 +8,12 @@ import models.Movie;
 import models.User;
 import utils.XMLSerializer;
 
-public class LMovieAPI
+public class SkyhookAPI
 {
 	public Map<Long, User> userIndex = new HashMap<>();
 	public Map<Long, Movie> movieIndex = new HashMap<>();
 	public static XMLSerializer serializer  = new XMLSerializer(new File("data.xml"));
-	public LMovieAPI() {
+	public SkyhookAPI() {
 	}
 
 	public User addUser(Long id, String firstName, String lastName, String age, String gender, String occupation)

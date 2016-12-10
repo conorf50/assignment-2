@@ -5,7 +5,7 @@ import asg.cliche.Param;
 import asg.cliche.Shell;
 import asg.cliche.ShellFactory;
 import utils.Importer;
-import controllers.LMovieAPI;
+import controllers.SkyhookAPI;
 import models.Movie;
 import models.User;
 
@@ -19,10 +19,10 @@ public class Main
 		Main main = new Main();
 		Shell shell = ShellFactory.createConsoleShell("LMovie@" + System.getProperty("user.name").toLowerCase(), "Welcome to likemovie- ?help for instructions", main);		
 		shell.commandLoop();
-		main.likeMovies.store();	
+		main.likeMovies.write();	
 	}
 	
-	public LMovieAPI likeMovies = new LMovieAPI();
+	public SkyhookAPI likeMovies = new SkyhookAPI();
 	
 	@Command(description="Add a new User")
 	public void addUser (@Param(name="user ID") Long id,@Param(name="first name") String firstName, @Param(name="last name") String lastName,
@@ -63,7 +63,7 @@ public class Main
 	public void store ()
 	{
 		try {
-			likeMovies.store();
+			likeMovies.write();
 		} catch (Exception e) {
 			System.out.print("File write error");
 			e.printStackTrace();

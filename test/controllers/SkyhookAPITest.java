@@ -4,11 +4,11 @@ import java.util.Map;
 import org.junit.Test;
 import models.User;
 
-public class LMovieAPITest {
+public class SkyhookAPITest {
 
 
 //	User frank = new User (2l, "frank", "walsh", "M",  "40", "lecturer");
-	LMovieAPI api = new LMovieAPI();
+	SkyhookAPI api = new SkyhookAPI();
 	public void testAddUser(Long id, String firstName, String lastName, String age, String gender, String occupation)
 	{
 		api.addUser(0L, "bob", "jones", "M", "25", "student");
