@@ -9,13 +9,13 @@ The code has been documented with Eclipse's built in Javadoc generator.
 The programme runs in Eclipse as a command line application. The user can interact with the application through the CLI.
 
 ####How to use:
-To add a user you need their fist and last names, their age, their gender and their occupation.
+To add a user you need their first and last names, their age, their gender and their occupation.
 An example command would be 
 ~~~~ 
 au John Smith 34 M Painter 
 ~~~~~
 Typing ?list at the command prompt will list all of the commands available They all follow the structure above.
 
-BUGS - What's not working
-Movie recommendation
-Listing users ratings
+BUGS - What's _not_ working
+* Movie recommendation
+* Listing users ratings
