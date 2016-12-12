@@ -11,7 +11,9 @@ The programme runs in Eclipse as a command line application. The user can intera
 ####How to use:
 To add a user you need their fist and last names, their age, their gender and their occupation.
 An example command would be 
-~~~~ au John Smith 34 M Painter~~~~~~
+~~~~ 
+au John Smith 34 M Painter 
+~~~~~
 Typing ?list at the command prompt will list all of the commands available They all follow the structure above.
 
 BUGS - What's not working
