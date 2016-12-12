@@ -143,5 +143,15 @@ public class User
 		}
 	}
 
+	public static int getUserRatings() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public static int getRecommendations() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 	
 }

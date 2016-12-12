@@ -2,6 +2,8 @@ package controllers;
 import static org.junit.Assert.*;
 import java.util.Map;
 import org.junit.Test;
+
+import models.Movie;
 import models.User;
 
 public class SkyhookAPITest {
@@ -26,6 +28,8 @@ public class SkyhookAPITest {
 
 	@Test
 	public void	testRemoveUser() {
+		Object user = new User(2L, "frank", "walsh", "M", "40", "lecturer");
+	//	api.removeUser(user.id);
 	}
 
 	@Test
@@ -35,7 +39,11 @@ public class SkyhookAPITest {
 
 	@Test
 	public void testGetMovie() {
+		Movie movie = new Movie("film", "2016", "www.com");
 
+	assertNotEquals(api.getMovie(1), 0);
+	
+		
 	}
 
 	@Test

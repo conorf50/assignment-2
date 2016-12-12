@@ -37,8 +37,7 @@ public class Movie implements Comparable <Movie>
 	
 	public static HashMap<Long, Movie> listMovies() {
 		return movies;
-		
-	}
+		}
 	
 	public static void removeMovie(Long id) {
 		movies.remove(id);
@@ -75,6 +74,22 @@ public class Movie implements Comparable <Movie>
 	public Long getId() {
 		return this.id;
 	
+	}
+
+	public static void addRating(int userID, int movieID, int rating) {
+		
+	}
+
+	public static Movie getMovie(int movieID) {
+		return null;
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public static Movie getMovieTitle() {
+		return null;
+		// TODO Auto-generated method stub
+		
 	}
 
 	

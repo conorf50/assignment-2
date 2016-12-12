@@ -36,18 +36,20 @@ public class SkyhookAPI
 	
 
 	public void addRating(int userID, int movieID, int rating) {
+		Movie.addRating(userID,movieID,rating);
 	}
 
-	public int getMovie(int movieID) {
-		return 0;
+	public Movie getMovie(int movieID) {
+		return Movie.getMovie(movieID);
+		
 	}
 
 	public int getUserRatings(int userID) {
-		return 0;
+		return User.getUserRatings();
 	}
 
 	public int getUserRecommendations(int userID) {
-		return 0;
+		return User.getRecommendations();
 	}
 
 	public String getTopTenMovies() {
