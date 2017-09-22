@@ -1,14 +1,14 @@
 ## Algorithms Assignment-2 (skyhook)
 Movie recommendation system written in Java and based on data from MovieLens and using the Cliche CLI http://cliche.sourceforge.net/
-##Project Outline:
-####What does it do?
+## Project Outline:
+#### What does it do?
 This is a (basic) movie recommendation system writtem in Java 8, that lists users, the movies they've rated and the movies themselves.
 The code has been documented with Eclipse's built in Javadoc generator.
 
-####Outline:
+#### Outline:
 The programme runs in Eclipse as a command line application. The user can interact with the application through the CLI.
 
-####How to use:
+#### How to use:
 To add a user you need their first and last names, their age, their gender and their occupation.
 An example command would be 
 ~~~~ 
